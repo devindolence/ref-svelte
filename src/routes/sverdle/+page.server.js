@@ -1,5 +1,5 @@
 import { fail } from '@sveltejs/kit';
-import { Game } from './game';
+import { Game } from '../../mixins/game.js';
 
 /** @type {import('./$types').PageServerLoad} */
 export const load = ({ cookies }) => {

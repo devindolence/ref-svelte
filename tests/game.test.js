@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { Game } from '../src/routes/sverdle/game.js';
+import { Game } from '../src/mixins/game.js';
 
 describe('game test', () => {
 	it('returns true when a valid word is entered', () => {
