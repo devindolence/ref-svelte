@@ -1,5 +1,5 @@
 <script>
-  import '$styles/theme/dark/_smui-theme.scss';
+  import '$styles/styles.css';
   import Header from "$components/base/Header.svelte";
 </script>
 

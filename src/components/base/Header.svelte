@@ -2,29 +2,8 @@
   import {page} from '$app/stores';
   import logo from '$lib/images/svelte-logo.svg';
   import github from '$lib/images/github.svg';
+  import { headers } from '$routes/route'
 
-  export const headers = [
-    {
-      name: 'Home',
-      link: '/',
-      prev: '/',
-    },
-    {
-      name: 'About',
-      link: '/about',
-      prev: '/',
-    },
-    {
-      name: 'Sverdle',
-      link: '/sverdle',
-      prev: '/sverdle',
-    },
-    {
-      name: 'add',
-      link: '/add',
-      prev: '/add',
-    },
-  ]
 </script>
 
 <header>
@@ -39,13 +18,13 @@
       <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z"/>
     </svg>
     <ul>
-      {#each headers as {name, link, prev, startsWith}}
-        {#if startsWith === undefined}
-          <li aria-current={$page.url.pathname === prev ? 'page' : undefined}>
+      {#each headers as {name, link, arrow, startsWith}}
+        {#if startsWith === true}
+          <li aria-current={$page.url.pathname.startsWith(arrow) ? 'page' : undefined}>
             <a href={link}>{name}</a>
           </li>
         {:else}
-          <li aria-current={$page.url.pathname.startsWith(prev) ? 'page' : undefined}>
+          <li aria-current={$page.url.pathname === arrow ? 'page' : undefined}>
             <a href={link}>{name}</a>
           </li>
         {/if}
