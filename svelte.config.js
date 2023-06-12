@@ -11,20 +11,6 @@ const config = {
     // See https://kit.svelte.dev/docs/adapters for more information about adapters.
     adapter: adapter(),
   },
-  vite: {
-    resolve: {
-      alias: {
-        $api: path.resolve('./src/api'),
-        $components: path.resolve('./src/components'),
-        $lib: path.resolve('./src/lib'),
-        $mixins: path.resolve('./src/mixins'),
-        $routes: path.resolve('./src/routes'),
-        $styles: path.resolve('./src/styles'),
-        $theme: path.resolve('./src/theme'),
-        $utils: path.resolve('./src/utils'),
-      }
-    }
-  }
 };
 
 export default config;
