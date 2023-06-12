@@ -21,3 +21,5 @@ export const headers = [
     arrow: '/add',
   },
 ]
+
+setTimeout(()=>console.log('test'), 500)
