@@ -12,7 +12,6 @@ export default defineConfig({
 			$mixins: path.resolve('./src/mixins'),
 			$routes: path.resolve('./src/routes'),
 			$styles: path.resolve('./src/styles'),
-			$theme: path.resolve('./src/theme'),
 			$utils: path.resolve('./src/utils'),
 		}
 	},
