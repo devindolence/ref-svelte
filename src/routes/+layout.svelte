@@ -1,6 +1,6 @@
 <script>
   import '$styles/theme/dark/_smui-theme.scss';
-  import Header from "$components/Header.svelte";
+  import Header from "$components/base/Header.svelte";
 </script>
 
 <div class="app">

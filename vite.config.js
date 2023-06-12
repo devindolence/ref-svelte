@@ -13,6 +13,7 @@ export default defineConfig({
 			$routes: path.resolve('./src/routes'),
 			$styles: path.resolve('./src/styles'),
 			$utils: path.resolve('./src/utils'),
+			$entity: path.resolve('./src/entity'),
 		}
 	},
 	test: {
