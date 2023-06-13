@@ -1,7 +1,7 @@
 <script>
 	import { AccordionItem, Accordion } from 'flowbite-svelte';
-	export let multiple;
-	export let items;
+	export let multiple: Boolean;
+	export let items: Array<Object>;
 </script>
 
 <slot name='button'>
