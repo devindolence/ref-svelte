@@ -9,7 +9,6 @@
 	<title>Home</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
-<img src='/images/favicon.png'>
 
 <section>
 	<Button
