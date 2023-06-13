@@ -1,13 +1,13 @@
-export const headers = [
+const headers = [
   {
     name: 'Home',
     link: '/',
-    arrow: '/',
+    arrow: '/'
   },
   {
     name: 'About',
     link: '/about',
-    arrow: '/about',
+    arrow: '/about'
   },
   {
     name: 'Sverdle',
@@ -16,10 +16,10 @@ export const headers = [
     startsWith: true
   },
   {
-    name: 'add',
-    link: '/add',
-    arrow: '/add',
-  },
-]
+    name: 'sample',
+    link: '/sample',
+    arrow: '/sample'
+  }
+];
 
-setTimeout(()=>console.log('test'), 500)
+export default headers;

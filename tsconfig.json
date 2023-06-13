@@ -1,0 +1,31 @@
+{
+  "extends": "./.svelte-kit/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "paths": {
+      "$api": ["./src/api"],
+      "$api/*": ["./src/api/*"],
+      "$components": ["./src/components"],
+      "$components/*": ["./src/components/*"],
+      "$lib": ["./src/lib"],
+      "$lib/*": ["./src/lib/*"],
+      "$mixins": ["./src/mixins"],
+      "$mixins/*": ["./src/mixins/*"],
+      "$routes": ["./src/routes"],
+      "$routes/*": ["./src/routes/*"],
+      "$styles": ["./src/styles"],
+      "$styles/*": ["./src/styles/*"],
+      "$utils": ["./src/utils"],
+      "$utils/*": ["./src/utils/*"],
+      "$entity": ["./src/entity"],
+      "$entity/*": ["./src/entity/*"]
+    }
+  }
+}
