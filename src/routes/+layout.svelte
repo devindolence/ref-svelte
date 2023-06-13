@@ -4,12 +4,9 @@
 	import { onMount } from 'svelte';
 	import {
 		DarkMode,
-		Navbar,
-		NavBrand,
-		NavHamburger,
 	} from 'flowbite-svelte';
-	import { Cog } from 'svelte-heros-v2';
-	import Header from '$components/base/Header.svelte';
+
+	import Header from '$components/base/Navbar.svelte';
 	import Sidebar from '$components/base/Sidebar.svelte';
 
 	let breakPoint: number = 1024;
@@ -47,22 +44,14 @@
 
 <svelte:window bind:innerWidth={width} />
 
-<Navbar let:hidden let:toggle>
-	<NavHamburger on:click={toggleDrawer} btnClass='ml-3 lg:hidden' />
-	<NavBrand href='/' class='lg:ml-64'>
-		<Cog />
-		<span class='self-center whitespace-nowrap text-xl font-semibold dark:text-white pl-4'>
-			My Website
-		</span>
-	</NavBrand>
-	<NavHamburger on:click={toggle} />
-	<Header
-		hidden={hidden}
-		divClass={divClass}
-		ulClass={ulClass}
-	/>
-</Navbar>
+<Header
+	toggleDrawer={toggleDrawer}
+	divClass={divClass}
+	ulClass={ulClass}
+/>
+
 <DarkMode btnClass={darkmodebtn} />
+
 <Sidebar
 	activateClickOutside={activateClickOutside}
 	drawerHidden={drawerHidden}
