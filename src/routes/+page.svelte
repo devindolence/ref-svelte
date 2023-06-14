@@ -1,8 +1,12 @@
 <script>
 	import Counter from '$components/Counter.svelte';
-	import Button from '$components/base/Button.svelte';
+	import BButton from '$components/base/BaseButton.svelte';
 
-	const click = () => console.log('test event');
+	const buttonStyle = {
+		outline: true,
+		color: 'dark'
+	}
+	const click = () => console.log('test click event');
 </script>
 
 <svelte:head>
@@ -11,17 +15,15 @@
 </svelte:head>
 
 <section>
-	<Button
+	<BButton
+		buttonStyle={buttonStyle}
 		name='test'
-		gradient=false
-		outline=true
-		color='dark'
 		clickEvent={click}
 	>
 		<div slot='icon'>
 			<img src='/images/favicon.png'>
 		</div>
-	</Button>
+	</BButton>
 
 	<h2>
 		try editing <strong>src/routes/+page.svelte</strong>

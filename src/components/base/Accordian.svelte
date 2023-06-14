@@ -1,5 +1,6 @@
 <script>
 	import { AccordionItem, Accordion } from 'flowbite-svelte';
+
 	export let multiple: Boolean;
 	export let items: Array<Object>;
 </script>
