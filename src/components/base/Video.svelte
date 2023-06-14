@@ -2,4 +2,8 @@
 	import { Video } from 'flowbite-svelte';
 </script>
 
-<Video src='/videos/flowbite.mp4' controls trackSrc='flowbite.mp4' />
+<Video
+	controls
+	src='/videos/flowbite.mp4'
+	trackSrc='flowbite.mp4'
+/>
