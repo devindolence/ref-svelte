@@ -1,6 +1,6 @@
 <script>
 	import BaseButton from '$components/base/BaseButton.svelte';
-	import BaseAlert from '$components/base/BaseAlert.svelte';
+	import BaseBreadcrumb from '$components/base/BaseBreadcrumb.svelte';
 
 	const test = true;
 
@@ -14,11 +14,11 @@
 
 <section>
 
-	<BaseAlert
-		purpose='info'
-		useIcon={false}
-		dismissable={false}
-	/>
+	<BaseBreadcrumb
+		items={[{content: 1, home: true}, {content: 2}, {content: 3}]}
+	>
+
+	</BaseBreadcrumb>
 
 	<BaseButton
 		clickEvent='{() => console.log(test)}'

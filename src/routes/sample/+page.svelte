@@ -2,6 +2,8 @@
 	import BButton from '$components/base/BaseButton.svelte';
 	import { ButtonGroup } from 'flowbite-svelte';
 	import BaseToggle from '$components/base/BaseToggle.svelte';
+	import BaseAlert from '$components/base/BaseAlert.svelte';
+	import BaseBadge from '$components/base/BaseBadge.svelte';
 
 	const buttonStyle = {
 		outline: true,
@@ -45,3 +47,16 @@
 	content='test'
 >
 </BaseToggle>
+
+<!--Base Alert-->
+<BaseAlert
+	purpose='info'
+	useIcon={false}
+	dismissable={false}
+/>
+
+<!--Base Badge-->
+<BaseBadge
+	content='test'
+	props={{dismissable: true}}
+/>

@@ -1,11 +1,14 @@
 <script>
 	import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
 
-	export let items = [];
+	export let props = {};
+	export let items = undefined;
 </script>
 
-<Breadcrumb>
+<Breadcrumb {...props}>
 	{#each items as item}
-		<BreadcrumbItem>{item.content}</BreadcrumbItem>
+		<BreadcrumbItem home={item.home}>
+			{item.content}
+		</BreadcrumbItem>
 	{/each}
 </Breadcrumb>
