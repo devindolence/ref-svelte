@@ -15,14 +15,15 @@
 	export let clickEvent = function() {
 	};
 </script>
-
 {#if gradient === false}
 	<Button
 		{...buttonStyle}
 		on:click={clickEvent}
 	>
+		<slot name='prefix-icon'>
+		</slot>
 		{name}
-		<slot name='icon'>
+		<slot name='suffix-icon'>
 			<!--		<img src='/images/favicon.png'>-->
 			<!--			or			-->
 			<!--			<svg>-->

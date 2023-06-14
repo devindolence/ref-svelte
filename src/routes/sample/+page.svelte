@@ -1,10 +1,36 @@
 <script>
-	// import Typo from '$components/example/Blockquote.svelte';
-	// import Heading from '$components/example/Heading.svelte';
-	// import Hl from '$components/example/Hl.svelte';
+	import BButton from '$components/base/BaseButton.svelte';
+	import { ButtonGroup } from 'flowbite-svelte';
+
+	const buttonStyle = {
+		outline: true,
+		color: 'dark'
+	};
+	const click = () => console.log('test click event');
 </script>
 
-<!--<Heading />-->
-<!--<Hl />-->
-
-<!--<Typo />-->
+<!-- button sample -->
+<BButton
+	buttonStyle={buttonStyle}
+	name='test'
+	clickEvent={click}
+>
+	<div slot='prefix-icon'>
+		<img src='/images/favicon.png'>
+	</div>
+</BButton>
+<br>
+<ButtonGroup>
+	<BButton
+		buttonStyle="{{color: 'blue'}}"
+		name='group1'
+	/>
+	<BButton
+		buttonStyle="{{color: 'red'}}"
+		name='group2'
+	/>
+	<BButton
+		buttonStyle="{{color: 'green'}}"
+		name='group3'
+	/>
+</ButtonGroup>
