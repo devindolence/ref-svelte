@@ -6,8 +6,8 @@
 		DarkMode,
 	} from 'flowbite-svelte';
 
-	import Header from '$components/base/Navbar.svelte';
-	import Sidebar from '$components/base/Sidebar.svelte';
+	import Header from '$components/layout/Navbar.svelte';
+	import Sidebar from '$components/layout/Sidebar.svelte';
 
 	let breakPoint: number = 1024;
 	let width: number;

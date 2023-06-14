@@ -15,7 +15,7 @@
 <!-- button sample -->
 <BButton
 	buttonStyle={buttonStyle}
-	name='test'
+	content='test'
 	clickEvent={click}
 >
 	<div slot='prefix-icon'>

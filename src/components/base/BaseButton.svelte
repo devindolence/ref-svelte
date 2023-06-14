@@ -11,7 +11,7 @@
 		disabled: false
 	};
 	export let gradient = false;
-	export let name = 'button';
+	export let content = 'button';
 	export let clickEvent = function() {
 	};
 </script>
@@ -22,7 +22,7 @@
 	>
 		<slot name='prefix-icon'>
 		</slot>
-		{name}
+		{content}
 		<slot name='suffix-icon'>
 			<!--		<img src='/images/favicon.png'>-->
 			<!--			or			-->
@@ -39,7 +39,7 @@
 		{...buttonStyle}
 		on:click={clickEvent}
 	>
-		{name}
+		{content}
 		<slot name='icon'>
 		</slot>
 		<slot name='indicator'>

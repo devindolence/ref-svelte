@@ -41,6 +41,6 @@
 		<Label for="confirm_password" class="mb-2">Confirm password</Label>
 		<Input type="password" id="confirm_password" placeholder="•••••••••" required />
 	</div>
-	<Checkbox class="mb-6 space-x-1" required>I agree with the <A href="/" class="text-primary-700 dark:text-primary-600 hover:underline">terms and conditions</A>.</Checkbox>
+	<Checkbox class="mb-6 space-x-1" required>I agree with the <A href='/static' class="text-primary-700 dark:text-primary-600 hover:underline">terms and conditions</A>.</Checkbox>
 	<Button type="submit">Submit</Button>
 </form>
