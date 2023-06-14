@@ -1,11 +1,14 @@
 <script>
 	import BButton from '$components/base/BaseButton.svelte';
 	import { ButtonGroup } from 'flowbite-svelte';
+	import BaseToggle from '$components/base/BaseToggle.svelte';
 
 	const buttonStyle = {
 		outline: true,
 		color: 'dark'
 	};
+
+	let toggle = true;
 	const click = () => console.log('test click event');
 </script>
 
@@ -34,3 +37,11 @@
 		name='group3'
 	/>
 </ButtonGroup>
+
+<!-- Base Toggle -->
+<BaseToggle
+	toggleStyles="{{size:'large'}}"
+	bind:value={toggle}
+	content='test'
+>
+</BaseToggle>
