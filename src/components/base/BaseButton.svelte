@@ -10,9 +10,6 @@
 		shadow: false,
 		disabled: false
 	};
-	export let gradientStyle = {
-
-	}
 	export let gradient = false;
 	export let name = 'button';
 	export let clickEvent = function() {
