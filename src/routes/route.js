@@ -19,6 +19,11 @@ const headers = [
     name: 'sample',
     link: '/sample',
     arrow: '/sample'
+  },
+  {
+    name: 'Stream Data',
+    link: '/stream',
+    arrow: '/stream'
   }
 ];
 

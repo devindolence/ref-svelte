@@ -1,6 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vitest/config';
-import path from "path";
+import path from 'path';
 import sveltePreprocess from 'svelte-preprocess';
 
 export default defineConfig({
@@ -19,15 +19,16 @@ export default defineConfig({
 	],
 	resolve: {
 		alias: {
-			$api: path.resolve('./src/api'),
-			$components: path.resolve('./src/components'),
-			$lib: path.resolve('./src/lib'),
-			$mixins: path.resolve('./src/mixins'),
-			$routes: path.resolve('./src/routes'),
-			$styles: path.resolve('./src/styles'),
-			$utils: path.resolve('./src/utils'),
-			$entity: path.resolve('./src/entity'),
-		}
+      $api: path.resolve('./src/api'),
+      $components: path.resolve('./src/components'),
+      $lib: path.resolve('./src/lib'),
+      $mixins: path.resolve('./src/mixins'),
+      $routes: path.resolve('./src/routes'),
+      $styles: path.resolve('./src/styles'),
+      $utils: path.resolve('./src/utils'),
+      $entity: path.resolve('./src/entity'),
+      $store: path.resolve('./src/stores')
+    }
 	},
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']

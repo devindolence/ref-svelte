@@ -2,12 +2,13 @@
   import BaseButton from '$components/base/BaseButton.svelte';
   import { onMount } from 'svelte';
   import { useData } from '../stores/store.js';
+  import { someFunc } from '$mixins/stream-data';
 
   // eslint-disable-next-line no-unused-vars
   let userData = [];
 
   function click() {
-
+    someFunc.test(userData);
   }
 
   onMount(async () => {
