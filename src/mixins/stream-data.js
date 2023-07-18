@@ -27,6 +27,17 @@ function testForObject(data) {
   };
 }
 
+function testForList(items) {
+  let keys = Object.keys(items[0]);
+  let values = items;
+
+  return {
+    keys,
+    values
+  };
+}
+
 export const someFunc = {
-  test: testForObject
+  test: testForObject,
+  testForList
 };

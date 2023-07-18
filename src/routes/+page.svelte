@@ -14,7 +14,6 @@
   onMount(async () => {
     await useData.setData();
     userData = useData.subscribeData();
-    console.log(userData);
   });
 </script>
 
