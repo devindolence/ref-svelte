@@ -1,10 +1,20 @@
 <script>
 	import BaseButton from '$components/base/BaseButton.svelte';
-	import BaseBreadcrumb from '$components/base/BaseBreadcrumb.svelte';
+	import BasePagination from '$components/base/BasePagination.svelte';
 
-	const test = true;
+	function click() {
 
+	}
 
+	const pages = [
+		{ name: 1, href: '/?page=1' },
+		{ name: 2, href: '/?page=2' },
+		{ name: 3, href: '/?page=3' },
+		{ name: 4, href: '/?page=4' },
+		{ name: 5, href: '/?page=5' },
+		{ name: 6, href: '/?page=6' },
+		{ name: 7, href: '/?page=7' }
+	];
 </script>
 
 <svelte:head>
@@ -13,15 +23,14 @@
 </svelte:head>
 
 <section>
-
-	<BaseBreadcrumb
-		items={[{content: 1, home: true}, {content: 2}, {content: 3}]}
+	<BasePagination
+		{pages}
 	>
 
-	</BaseBreadcrumb>
+	</BasePagination>
 
 	<BaseButton
-		clickEvent='{() => console.log(test)}'
+		clickEvent={click}
 	>
 	</BaseButton>
 </section>

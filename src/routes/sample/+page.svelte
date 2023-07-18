@@ -4,6 +4,7 @@
 	import BaseToggle from '$components/base/BaseToggle.svelte';
 	import BaseAlert from '$components/base/BaseAlert.svelte';
 	import BaseBadge from '$components/base/BaseBadge.svelte';
+	import BaseBreadcrumb from '$components/base/BaseBreadcrumb.svelte';
 
 	const buttonStyle = {
 		outline: true,
@@ -60,3 +61,10 @@
 	content='test'
 	props={{dismissable: true}}
 />
+
+<!--BaseBreadcrumb-->
+<BaseBreadcrumb
+	items={[{content: 1, itemProps:{home: true}}, {content: 2}, {content: 3}]}
+>
+
+</BaseBreadcrumb>
