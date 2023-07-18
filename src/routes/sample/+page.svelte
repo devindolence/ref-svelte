@@ -1,13 +1,13 @@
 <script>
-	import BButton from '$components/base/BaseButton.svelte';
-	import { ButtonGroup } from 'flowbite-svelte';
-	import BaseToggle from '$components/base/BaseToggle.svelte';
-	import BaseAlert from '$components/base/BaseAlert.svelte';
-	import BaseBadge from '$components/base/BaseBadge.svelte';
-	import BaseBreadcrumb from '$components/base/BaseBreadcrumb.svelte';
+  import BButton from '$components/base/BaseButton.svelte';
+  import { ButtonGroup } from 'flowbite-svelte';
+  import BaseToggle from '$components/base/BaseToggle.svelte';
+  import BaseAlert from '$components/base/BaseAlert.svelte';
+  import BaseBadge from '$components/base/BaseBadge.svelte';
+  import BaseBreadcrumb from '$components/base/BaseBreadcrumb.svelte';
   import BasePagination from '$components/base/BasePagination.svelte';
 
-	const buttonStyle = {
+  const buttonStyle = {
 		outline: true,
 		color: 'dark'
 	};
@@ -33,7 +33,7 @@
 	clickEvent={click}
 >
 	<div slot='prefix-icon'>
-		<img src='/images/favicon.png'>
+		<img alt='' src='/images/favicon.png'>
 	</div>
 </BButton>
 <br>

@@ -7,7 +7,6 @@ export async function getTest() {
     responseType: 'json'
   })
   .then((response) => {
-    console.log(response);
     return response.data;
   })
   .catch((error) => {

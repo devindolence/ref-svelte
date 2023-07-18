@@ -1,24 +1,19 @@
 <script>
   import BaseButton from '$components/base/BaseButton.svelte';
   import { onMount } from 'svelte';
-  import { data } from '../stores/store.js';
-  import { getTest } from '$api/api.js';
+  import { useData } from '../stores/store.js';
 
   // eslint-disable-next-line no-unused-vars
-  let getData = [];
+  let userData = [];
 
   function click() {
 
   }
 
-
   onMount(async () => {
-    data.set(await getTest());
-    data.subscribe((value) => {
-      getData = value;
-    });
-    console.log(data);
-    console.log(getData);
+    await useData.setData();
+    userData = useData.subscribeData();
+    console.log(userData);
   });
 </script>
 
@@ -29,7 +24,7 @@
 
 <section>
   <div>
-    {getData.userId} {getData.id} {getData.title} {getData.completed}
+    {userData.userId} {userData.id} {userData.title} {userData.completed}
   </div>
 
   <BaseButton
