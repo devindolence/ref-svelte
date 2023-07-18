@@ -5,6 +5,7 @@
 	import BaseAlert from '$components/base/BaseAlert.svelte';
 	import BaseBadge from '$components/base/BaseBadge.svelte';
 	import BaseBreadcrumb from '$components/base/BaseBreadcrumb.svelte';
+  import BasePagination from '$components/base/BasePagination.svelte';
 
 	const buttonStyle = {
 		outline: true,
@@ -13,6 +14,16 @@
 
 	let toggle = true;
 	const click = () => console.log('test click event');
+
+  const pages = [
+    { name: 1, href: '/?page=1' },
+    { name: 2, href: '/?page=2' },
+    { name: 3, href: '/?page=3' },
+    { name: 4, href: '/?page=4' },
+    { name: 5, href: '/?page=5' },
+    { name: 6, href: '/?page=6' },
+    { name: 7, href: '/?page=7' }
+  ];
 </script>
 
 <!-- button sample -->
@@ -68,3 +79,10 @@
 >
 
 </BaseBreadcrumb>
+
+
+<!--BasePagination-->
+<BasePagination
+  {pages}
+>
+</BasePagination>
