@@ -1,17 +1,29 @@
-<script>
+<script lang='ts'>
   import { onMount } from 'svelte';
   import { customFunc } from '$mixins/stream-data-function';
+  import { entities } from '$mixins/modelType';
 
   import BaseButton from '$components/base/BaseButton.svelte';
   import BaseTable from '$components/base/frame/BaseTable.svelte';
-  import { Input, Label } from 'flowbite-svelte';
+  import { Input, Label, Select, Textarea } from 'flowbite-svelte';
+
 
   // eslint-disable-next-line no-unused-vars
   let items = { keys: [], values: [] };
   let url = 'https://jsonplaceholder.typicode.com/todos/1';
+  let selected = '';
+  let entity;
 
   $: {
     customFunc.setDefault(url);
+    let count = 0;
+    entity = Object.values(selected).map(value => {
+      if (count === 0) {
+        count++;
+        return `${value.fieldType.name} : ${value.dataType.name}`;
+      }
+      return `\n${value.fieldType.name} : ${value.dataType.name}`;
+    });
   }
 
   async function callGet() {
@@ -23,7 +35,7 @@
 </script>
 
 <main>
-  <div>
+  <div class='dark -mx-1.5 -space-x-3 bg-[#1da1f2] '>
     <BaseButton
       clickEvent={callGet}
       content='GET METHOD'
@@ -41,6 +53,19 @@
       content='DELETE METHOD'
     />
   </div>
+  <br>
+  <br>
+  <Select
+    bind:value='{selected}'
+    items='{entities}'
+  />
+  <br>
+  <br>
+  {selected}
+  <Textarea
+    bind:value='{entity}'
+    rows='10'
+  />
   <br>
   <br>
   <div style='background: black'>

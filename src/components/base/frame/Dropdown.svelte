@@ -1,11 +1,15 @@
 <script>
-	import { Button, Dropdown, DropdownItem, Chevron } from 'flowbite-svelte'
+  import { Button, Chevron, Dropdown, DropdownItem } from 'flowbite-svelte';
+
+  export let items;
 </script>
 
-<Button><Chevron>Dropdown button</Chevron></Button>
-<Dropdown >
-	<DropdownItem>Dashboard</DropdownItem>
-	<DropdownItem>Settings</DropdownItem>
-	<DropdownItem>Earnings</DropdownItem>
-	<DropdownItem>Sign out</DropdownItem>
+<Button>
+  <Chevron>Dropdown button</Chevron>
+</Button>
+
+<Dropdown>
+  {#each items as item}
+    <DropdownItem>{item.name}</DropdownItem>
+  {/each}
 </Dropdown>
