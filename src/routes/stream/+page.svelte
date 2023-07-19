@@ -6,6 +6,7 @@
   import BaseButton from '$components/base/BaseButton.svelte';
   import BaseTable from '$components/base/frame/BaseTable.svelte';
   import { Input, Label, Select, Textarea } from 'flowbite-svelte';
+  import AutoScaleInputField from '$components/base/form/AutoScaleInputField.svelte';
 
   let items = { keys: [], values: [] };
   let url = 'https://jsonplaceholder.typicode.com/todos/1';
@@ -64,18 +65,9 @@
   />
   <br>
   <br>
-  {#each Object.keys(selected) as key}
-    <Label
-      class='bg-black'
-      for='{key}'
-    >
-      {key}
-    </Label>
-    <Input
-      id='{key}'
-      value='{selected[key].fieldType.name} : {selected[key].dataType.name}'
-    />
-  {/each}
+  <AutoScaleInputField
+    items='{selected}'
+  />
   <br>
   <div class='bg-black'>
     <Label
