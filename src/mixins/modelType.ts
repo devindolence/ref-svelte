@@ -1,7 +1,7 @@
-import { defaultTodo } from '$entity/Todo';
-import { defaultPost } from '$entity/Post';
+import { TodoImpl } from '$entity/Todo';
+import { PostImpl } from '$entity/Post';
 
 export const entities = [
-  { name: 'Todo', value: defaultTodo },
-  { name: 'Post', value: defaultPost }
+  { name: 'Todo', value: new TodoImpl({}) },
+  { name: 'Post', value: new PostImpl({}) }
 ];

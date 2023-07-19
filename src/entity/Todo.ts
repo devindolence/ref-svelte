@@ -9,27 +9,12 @@ export interface Todo {
 }
 
 export class TodoImpl implements Todo {
-  userId: FieldType;
-  id: FieldType;
-  title: FieldType;
-  completed: FieldType;
+  userId: FieldType = new FieldType(Input, Number);
+  id: FieldType = new FieldType(Input, Number);
+  title: FieldType = new FieldType(Input, String);
+  completed: FieldType = new FieldType(Input, Boolean);
 
-  constructor(
-    public userId: FieldType,
-    public id: FieldType,
-    public title: FieldType,
-    public completed: FieldType
-  ) {
-    this.userId = userId;
-    this.id = id;
-    this.title = title;
-    this.completed = completed;
+  constructor(params: Partial<TodoImpl>) {
+    Object.assign(this, params);
   }
 }
-
-export const defaultTodo = new TodoImpl(
-  new FieldType(Input, Number),
-  new FieldType(Input, Number),
-  new FieldType(Input, String),
-  new FieldType(Input, Boolean)
-);

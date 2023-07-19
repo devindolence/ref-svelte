@@ -21,9 +21,9 @@
       console.log(key);
       if (count === 0) {
         count++;
-        return `${key}: {${selected[key].fieldType.name} : ${selected[key].dataType.name}}`;
+        return `${key}: {${selected[key]?.fieldType.name} : ${selected[key]?.dataType.name}}`;
       }
-      return `\n${key}: {${selected[key].fieldType.name} : ${selected[key].dataType.name}}`;
+      return `\n${key}: {${selected[key]?.fieldType.name} : ${selected[key]?.dataType.name}}`;
     });
   }
 

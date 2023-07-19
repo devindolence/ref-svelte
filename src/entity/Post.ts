@@ -9,27 +9,12 @@ export interface Post {
 }
 
 export class PostImpl implements Post {
-  userId: FieldType;
-  id: FieldType;
-  title: FieldType;
-  body: FieldType;
+  userId: FieldType = new FieldType(Input, Number);
+  id: FieldType = new FieldType(Input, Number);
+  title: FieldType = new FieldType(Input, String);
+  body: FieldType = new FieldType(Input, String);
 
-  constructor(
-    public userId: FieldType,
-    public id: FieldType,
-    public title: FieldType,
-    public body: FieldType
-  ) {
-    this.userId = userId;
-    this.id = id;
-    this.title = title;
-    this.body = body;
+  constructor(params: Partial<PostImpl>) {
+    Object.assign(this, params);
   }
 }
-
-export const defaultPost = new PostImpl(
-  new FieldType(Input, Number),
-  new FieldType(Input, Number),
-  new FieldType(Input, String),
-  new FieldType(Input, String)
-);
