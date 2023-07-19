@@ -14,3 +14,17 @@ export async function getTest() {
   });
 }
 
+export async function getApi(url) {
+  console.log(`call api : ${url}`);
+  return axios({
+    method: 'get',
+    url: url,
+    responseType: 'json'
+  })
+  .then((response) => {
+    return response.data;
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}
