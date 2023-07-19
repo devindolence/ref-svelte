@@ -1,33 +1,48 @@
 <script>
   import { onMount } from 'svelte';
-  import { useData } from '$store/store.js';
-  import { someFunc } from '$mixins/stream-data.js';
-  import { useApi } from '$store/apiStore.js';
+  import { customFunc } from '$mixins/stream-data-function';
+
   import BaseButton from '$components/base/BaseButton.svelte';
   import BaseTable from '$components/base/frame/BaseTable.svelte';
   import { Input, Label } from 'flowbite-svelte';
 
   // eslint-disable-next-line no-unused-vars
-  let items;
-  $: items = { keys: [], values: [] };
-
+  let items = { keys: [], values: [] };
   let url = 'https://jsonplaceholder.typicode.com/todos/1';
 
-  async function click3() {
-    // 'https://jsonplaceholder.typicode.com/todos/1'
-    console.log(url);
-    useApi.setUrl(url);
-    let data = await useApi.getApiData(url.toString());
-    console.log(`get data : ${data}`);
-    items = someFunc.testForList([data]);
+  $: {
+    customFunc.setDefault(url);
+  }
+
+  async function callGet() {
+    items = await customFunc.callGetMethod();
   }
 
   onMount(async () => {
-    await useData.setData();
   });
 </script>
 
-<section>
+<main>
+  <div>
+    <BaseButton
+      clickEvent={callGet}
+      content='GET METHOD'
+    />
+    <BaseButton
+      clickEvent={customFunc.callGetMethod}
+      content='POST METHOD'
+    />
+    <BaseButton
+      clickEvent={customFunc.callGetMethod}
+      content='UPDATE METHOD'
+    />
+    <BaseButton
+      clickEvent={customFunc.callGetMethod}
+      content='DELETE METHOD'
+    />
+  </div>
+  <br>
+  <br>
   <div style='background: black'>
     <Label
       for='url'
@@ -40,13 +55,9 @@
     >
     </Input>
   </div>
-
+  <br>
+  <br>
   <div>
-    <BaseButton
-      clickEvent={click3}
-      content='apiCall'
-    />
-
     <BaseTable
       headers='{items.keys}'
       items='{items.values}'
@@ -54,4 +65,4 @@
     </BaseTable>
   </div>
 
-</section>
+</main>

@@ -30,7 +30,8 @@ function testForObject(data) {
 function testForList(items) {
   let keys = Object.keys(items[0]);
   let values = items;
-
+  console.log(keys);
+  console.log(values);
   return {
     keys,
     values
