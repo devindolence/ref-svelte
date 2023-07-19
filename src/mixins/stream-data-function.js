@@ -15,6 +15,9 @@ function responseToList(items) {
 
 async function callGetMethod() {
   let data = await useApi.getApiData(url.toString());
+  if (data instanceof Array) {
+    return responseToList(data);
+  }
   return responseToList([data]);
 }
 
