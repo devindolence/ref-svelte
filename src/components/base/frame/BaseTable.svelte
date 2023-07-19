@@ -22,7 +22,11 @@
     {#each items as item}
       <TableBodyRow>
         {#each headers as key}
-          <TableBodyCell>{item[key]}</TableBodyCell>
+          <TableBodyCell
+            tdClass='px-6 py-4'
+          >
+            {item[key]}
+          </TableBodyCell>
         {/each}
       </TableBodyRow>
     {/each}
