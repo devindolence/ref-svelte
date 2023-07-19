@@ -7,8 +7,6 @@
   import BaseTable from '$components/base/frame/BaseTable.svelte';
   import { Input, Label, Select, Textarea } from 'flowbite-svelte';
 
-
-  // eslint-disable-next-line no-unused-vars
   let items = { keys: [], values: [] };
   let url = 'https://jsonplaceholder.typicode.com/todos/1';
   let selected = '';
@@ -18,7 +16,6 @@
     customFunc.setDefault(url);
     let count = 0;
     entity = Object.keys(selected).map(key => {
-      console.log(key);
       if (count === 0) {
         count++;
         return `${key}: {${selected[key]?.fieldType.name} : ${selected[key]?.dataType.name}}`;
@@ -35,7 +32,7 @@
   });
 </script>
 
-<main>
+<section>
   <div class='dark -mx-1.5 -space-x-3 bg-[#1da1f2] '>
     <BaseButton
       clickEvent={callGet}
@@ -61,15 +58,26 @@
     items='{entities}'
   />
   <br>
-  <br>
-  {selected}
   <Textarea
     bind:value='{entity}'
     rows='10'
   />
   <br>
   <br>
-  <div style='background: black'>
+  {#each Object.keys(selected) as key}
+    <Label
+      class='bg-black'
+      for='{key}'
+    >
+      {key}
+    </Label>
+    <Input
+      id='{key}'
+      value='{selected[key].fieldType.name} : {selected[key].dataType.name}'
+    />
+  {/each}
+  <br>
+  <div class='bg-black'>
     <Label
       for='url'
     >
@@ -91,4 +99,4 @@
     </BaseTable>
   </div>
 
-</main>
+</section>
