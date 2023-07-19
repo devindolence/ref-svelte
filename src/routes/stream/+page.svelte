@@ -17,12 +17,13 @@
   $: {
     customFunc.setDefault(url);
     let count = 0;
-    entity = Object.values(selected).map(value => {
+    entity = Object.keys(selected).map(key => {
+      console.log(key);
       if (count === 0) {
         count++;
-        return `${value.fieldType.name} : ${value.dataType.name}`;
+        return `${key}: {${selected[key].fieldType.name} : ${selected[key].dataType.name}}`;
       }
-      return `\n${value.fieldType.name} : ${value.dataType.name}`;
+      return `\n${key}: {${selected[key].fieldType.name} : ${selected[key].dataType.name}}`;
     });
   }
 
