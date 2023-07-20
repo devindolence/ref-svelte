@@ -1,6 +1,11 @@
 <script>
   import { Button, Input, Label } from 'flowbite-svelte';
 
+  const componentMap = {
+    'Input': Input,
+    'Button': Button
+  };
+
   export let items;
 </script>
 
@@ -11,16 +16,11 @@
   >
     {key}
   </Label>
-  {#if items[key].fieldType.name === 'Input'}
-    <Input
-      id='{key}'
-      value='{items[key].dataType.name}'
-    />
-  {:else }
-    <Button
-      id='{key}'
-      value='{items[key].dataType.name}'
-    />
-  {/if}
+  <svelte:component
+    this={componentMap[items[key].fieldType.name]}
+    id={key}
+    value={items[key].dataType.name}
+  >
+  </svelte:component>
 {/each}
 
