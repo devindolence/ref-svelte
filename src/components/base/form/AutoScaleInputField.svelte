@@ -1,9 +1,10 @@
 <script>
-  import { Button, Input, Label } from 'flowbite-svelte';
+  import { Input, Label } from 'flowbite-svelte';
+  import BaseButton from '$components/base/BaseButton.svelte';
 
   const componentMap = {
     'Input': Input,
-    'Button': Button
+    'Button': BaseButton
   };
 
   export let items;

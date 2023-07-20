@@ -11,16 +11,16 @@
     disabled: false
   };
   export let gradient = false;
-	export let content = 'button';
-	export let clickEvent = function() {
-	};
+  export let value = 'button';
+  export let clickEvent = function() {
+  };
 </script>
 {#if gradient === false}
   <GradientButton
     {...buttonStyle}
     on:click={clickEvent}
   >
-    {content}
+    {value}
     <slot name='icon'>
     </slot>
     <slot name='indicator'>
@@ -33,7 +33,7 @@
   >
     <slot name='prefix-icon'>
     </slot>
-    {content}
+    {value}
     <slot name='suffix-icon'>
       <!--		<img src='/images/favicon.png'>-->
       <!--			or			-->
